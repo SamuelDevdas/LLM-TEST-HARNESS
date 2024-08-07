@@ -1,0 +1,101 @@
+# Learn more about building a configuration: https://promptfoo.dev/docs/configuration/guide
+description: "LLM-TEST-HARNESS"
+
+prompts:
+  - 'Assume the laws of physics. A small marble is put into a normal cup and the cup is placed upside down on a table. Someone then takes the cup without changing its orientation and puts it inside the microwave. Where is the marble in the end?'
+  # - 'Provide 10 sentences that end in the word "beauty".'
+  # - 'What is the number that rhymes with the word we use to describe punishment?'
+  # - 'I have 3 oranges, then I buy 3 more. I make juice with 2 of the oranges. After drinking half of the juice, how many oranges do I have left?'
+  # - 'Tom is a boy. He has four sisters. Each of his sisters has three brothers. How many brothers does Tom have in total?'
+  # - 'Three different doctors said that Paul is their brother yet Paul claims he has no brothers. Who is lying?'
+  # - 'Anna and Bob are in a room with a toy car, a shelf, and a drawer. Anna puts the toy car on the shelf, then leaves for the day. While Anna is gone, Bob puts the toy car in the drawer, and then leaves for lunch. They both return together later, not knowing what happened while they were away. Where do they think the toy car is?'
+  # - 'Which number is bigger, 9.11 or 9.9, and why?'
+  # - 'If we place 6 towels out in the sun and it takes 3 hours to dry, how long would 24 towels take to dry? Explain your reasoning step by step.'
+  - 'How many words are there in the question I am asking?'
+  # - 'Amy is quicker than Ben. Ben is quicker than Carl. Is Carl quicker than Amy?'
+  # - '30 – 5 * 3 + 4 =?'
+  # - 'If a regular octagon has a side length of 32, what is its perimeter?'
+  
+
+  
+  # - 'Create an HTML page with a button that displays a fireworks animation when clicked. Use CSS & JS as well.'
+  # - 'Write a Python function that prints the next 15 prime numbers. Reply with only the function.'
+  # - 'Write an HTML landing page for a tech startup. They prefer a clean and professional-looking interface with smooth transitions.'
+  
+  
+
+providers:
+
+
+  # - id: ollama:closex/neuraldaredevil-8b-abliterated:latest
+  #   config:
+  #     temperature: 0
+
+  # - id: ollama:cyberwald/llama-3.1-sauerkrautlm-8b-instruct:latest 
+  #   config:
+  #     temperature: 0
+
+  # - id: ollama:mistral-nemo:latest
+  #   config:
+  #     temperature: 0
+
+  # - id: ollama:completion:taozhiyuai/hermes-2-theta-llama-3:8b-q4_k_m
+  #   config:
+  #     temperature: 0
+  
+  # - id: ollama:gemma2:2b
+  #   config:
+  #     temperature: 0
+
+  - id: ollama:mannix/llama3.1-8b-abliterated:latest
+    config:
+      temperature: 0 
+
+  # - id: ollama:llama3.1
+  #   config:
+  #     temperature: 0
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# tests:
+#   - vars:
+#       topic: bananas
+
+#   - vars:
+#       topic: avocado toast
+#     assert:
+#       # For more information on assertions, see https://promptfoo.dev/docs/configuration/expected-outputs
+
+#       # Make sure output contains the word "avocado"
+#       - type: icontains
+#         value: avocado
+
+#       # Prefer shorter outputs
+#       - type: javascript
+#         value: 1 / (output.length + 1)
+
+#   - vars:
+#       topic: new york city
+#     assert:
+#       # For more information on model-graded evals, see https://promptfoo.dev/docs/configuration/expected-outputs/model-graded
+#       - type: llm-rubric
+#         value: ensure that the output is funny
+
