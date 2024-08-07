@@ -2,7 +2,7 @@
 description: "LLM-TEST-HARNESS"
 
 prompts:
-  - 'Assume the laws of physics. A small marble is put into a normal cup and the cup is placed upside down on a table. Someone then takes the cup without changing its orientation and puts it inside the microwave. Where is the marble in the end?'
+  - 'Assume the laws of physics. A small marble is put into a cup and the cup is turned and placed on the table. Someone then takes the cup without changing its orientation and puts it inside the microwave. Where is the marble in the end?'
   # - 'Provide 10 sentences that end in the word "beauty".'
   # - 'What is the number that rhymes with the word we use to describe punishment?'
   # - 'I have 3 oranges, then I buy 3 more. I make juice with 2 of the oranges. After drinking half of the juice, how many oranges do I have left?'
@@ -11,7 +11,7 @@ prompts:
   # - 'Anna and Bob are in a room with a toy car, a shelf, and a drawer. Anna puts the toy car on the shelf, then leaves for the day. While Anna is gone, Bob puts the toy car in the drawer, and then leaves for lunch. They both return together later, not knowing what happened while they were away. Where do they think the toy car is?'
   # - 'Which number is bigger, 9.11 or 9.9, and why?'
   # - 'If we place 6 towels out in the sun and it takes 3 hours to dry, how long would 24 towels take to dry? Explain your reasoning step by step.'
-  - 'How many words are there in the question I am asking?'
+  - 'Count the words  that are there in your response to the question I am asking?'
   # - 'Amy is quicker than Ben. Ben is quicker than Carl. Is Carl quicker than Amy?'
   # - '30 – 5 * 3 + 4 =?'
   # - 'If a regular octagon has a side length of 32, what is its perimeter?'

@@ -1,10 +1,11 @@
-To get started, set your OPENAI_API_KEY environment variable, or other required keys for the providers you selected.
+# LLM Test Harness
 
-Next, edit promptfooconfig.yaml.
-
-Then run:
+1. Create a new project with `npx promptfoo@latest init`
+2. Edit the `promptfooconfig.yaml` file, with your desired configuration like providers, prompts, etc.
+3. Then run:
 ```
 npx promptfoo@latest eval
 ```
+4. Optionally, you can view the results by running `npx promptfoo@latest view`
 
-Afterwards, you can view the results by running `npx promptfoo@latest view`
+
