@@ -28,7 +28,7 @@ prompts:
   # CODING CHALLENGES
   # - 'Using HTML, CSS, and JavaScript in the same file, create a button that explodes confetti when clicked.'
   # - 'Write a Python function that prints the next 15 prime numbers. Reply with only the function.'
-  - 'Write an HTML landing page for a tech startup. They prefer a clean and professional-looking interface with smooth transitions.'
+  - 'Using HTML, CSS, and JavaScript in the same file, write a landing page for a tech startup. They prefer a clean and professional-looking interface with smooth transitions.'
   
   
 
