@@ -27,7 +27,6 @@ prompts:
 
   # CODING CHALLENGES
   # - 'Using HTML, CSS, and JavaScript in the same file, create a button that explodes confetti when clicked.'
-  # # - 'Write a Python function that prints the next 15 prime numbers. Reply with only the function.'
   # - 'Create a single HTML file that incorporates HTML, CSS, and JavaScript to design a landing page for a tech startup. The page should have a clean and professional interface, ensuring smooth transitions between sections and interactions. The layout should be responsive, with key sections such as a hero header, features, team, and contact form. Focus on minimalism, using whitespace and typography effectively, while implementing transitions such as fade-in effects for elements as the user scrolls. Include embedded JavaScript to manage the interactive features like form validation or smooth scrolling.'
   
   
@@ -45,6 +44,10 @@ providers:
   # - id: ollama:jaahas/gemma-2-9b-it-abliterated:latest   ### 3rd BEST PERFORMANCE
   #   config:
   #     temperature: 0 
+
+  # - id: ollama:codegeex4:latest                 ### BEST CODING PERFORMANCE
+  #   config:
+  #     temperature: 0
 
   # - id: ollama:cyberwald/llama-3.1-sauerkrautlm-8b-instruct:latest 
   #   config:
@@ -72,9 +75,11 @@ providers:
   #   config:
   #     temperature: 0 
 
-  - id: ollama:impulse2000/phi3-abliterated:14b-medium-4k-instruct-q4_K_S
-    config:
-      temperature: 0
+  # - id: ollama:impulse2000/phi3-abliterated:14b-medium-4k-instruct-q4_K_S
+  #   config:
+  #     temperature: 0
+      
+
   
   
       
