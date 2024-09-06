@@ -4,10 +4,10 @@ description: "LLM-TEST-HARNESS"
 prompts:
 
   # CONTEXT UNDERSTANDING AND INSTRUCTION FOLLOWING
-  # - 'Provide 10 sentences that start with the word "apple" and end in the word "beauty".'
-  # - 'Three different doctors said that Paul is their brother yet Paul claims he has no brothers. Who is lying?'
-  # - 'Which number is greater, 9.11 or 9.9? Just say the number.'
-  # - 'Which number rhymes with the word used to describe a type of punishment. Count the letters step by step that are in that number'
+  - 'Provide 10 sentences that start with the word "apple" and end in the word "beauty".'
+  - 'Three different doctors said that Paul is their brother yet Paul claims he has no brothers. Who is lying?'
+  - 'Which number is greater, 9.11 or 9.9? Just say the number.'
+  - 'Which number rhymes with the word used to describe a type of punishment. Count the letters step by step that are in that number'
 
   # - 'A small marble is put into a cup and the cup is turned upside down. Then it is placed on the table. Someone then takes the cup without changing its orientation and puts it inside the microwave. Where is the marble in the end?'
   # - 'A small ball is put into a cup and the cup is turned upside down. Then the cup is turned back to the original position and placed on the table . Someone then takes the cup without changing its orientation and puts it inside the microwave. Where is the marble in the end?'
@@ -27,20 +27,24 @@ prompts:
 
   # CODING CHALLENGES
   # - 'Using HTML, CSS, and JavaScript in the same file, create a button that explodes confetti when clicked.'
-  # - 'Write a Python function that prints the next 15 prime numbers. Reply with only the function.'
-  - 'Using HTML, CSS, and JavaScript in the same file, write a landing page for a tech startup. They prefer a clean and professional-looking interface with smooth transitions.'
+  # # - 'Write a Python function that prints the next 15 prime numbers. Reply with only the function.'
+  # - 'Create a single HTML file that incorporates HTML, CSS, and JavaScript to design a landing page for a tech startup. The page should have a clean and professional interface, ensuring smooth transitions between sections and interactions. The layout should be responsive, with key sections such as a hero header, features, team, and contact form. Focus on minimalism, using whitespace and typography effectively, while implementing transitions such as fade-in effects for elements as the user scrolls. Include embedded JavaScript to manage the interactive features like form validation or smooth scrolling.'
   
   
 
 providers:
 
-  - id: ollama:closex/neuraldaredevil-8b-abliterated:latest   ### BEST PERFORMANCE
-    config:
-      temperature: 0
+  # - id: ollama:closex/neuraldaredevil-8b-abliterated:latest   ### BEST PERFORMANCE
+  #   config:
+  #     temperature: 0
 
-  - id: ollama:mannix/llama3.1-8b-abliterated:latest     ### 2nd BEST PERFORMANCE
-    config:
-      temperature: 0
+  # - id: ollama:mannix/llama3.1-8b-abliterated:latest     ### 2nd BEST PERFORMANCE
+  #   config:
+  #     temperature: 0
+
+  # - id: ollama:jaahas/gemma-2-9b-it-abliterated:latest   ### 3rd BEST PERFORMANCE
+  #   config:
+  #     temperature: 0 
 
   # - id: ollama:cyberwald/llama-3.1-sauerkrautlm-8b-instruct:latest 
   #   config:
@@ -68,15 +72,19 @@ providers:
   #   config:
   #     temperature: 0 
 
-  # - id: ollama:smollm:1.7b
-  #   config:
-  #     temperature: 0
+  - id: ollama:impulse2000/phi3-abliterated:14b-medium-4k-instruct-q4_K_S
+    config:
+      temperature: 0
   
-        
-  # - id: openai:chat:Llama-3.1-Storm-8B.Q4_K_M.gguf
+  
+      
+  
+######################LM STUDIO######################## 
+  # - id: openai:chat:mistral-nemo-instruct-2407-abliterated-q4_k_m.gguf
   #   config:
   #     apiBaseUrl: http://localhost:1234/v1
   #     apiKey: lmstudio
+  #     temperature: 0
 
 
   
