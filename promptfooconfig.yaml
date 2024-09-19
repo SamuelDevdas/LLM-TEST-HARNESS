@@ -4,18 +4,21 @@ description: "LLM-TEST-HARNESS"
 prompts:
 
   # CONTEXT UNDERSTANDING AND INSTRUCTION FOLLOWING
-  - 'Provide 10 sentences that start with the word "apple" and end in the word "beauty".'
-  - 'Three different doctors said that Paul is their brother yet Paul says he has no brothers. Who is lying and who is correct?'
-  - 'Which number is greater, 9.11 or 9.9? Just say the number.'
-  - 'Which number rhymes with the word used to describe a type of punishment. Count the letters step by step that are in that number'
+  # - 'how many r are there in the word STRAWBERRY? Let''s think step by step.'
+  # - 'how many r are there in the word STRAWBERRY? Let''s verify step by step.'
+  - 'how many r are there in the word STRAWBERRY? Lets break it down and verify each step.'
+  # - 'Provide 10 sentences that start with the word "apple" and end in the word "beauty".'
+  # - 'Three different doctors said that Paul is their brother yet Paul says he has no brothers. Who is lying and who is correct?'
+  # - 'Which number is greater, 9.11 or 9.9? Just say the number.'
+  # - 'Which number rhymes with the word used to describe a type of punishment. Count the letters step by step that are in that number'
 
   # - 'A small marble is put into a cup and the cup is turned upside down. Then it is placed on the table. Someone then takes the cup without changing its orientation and puts it inside the microwave. Where is the marble in the end?'
   # - 'A small ball is put into a cup and the cup is turned upside down. Then the cup is turned back to the original position and placed on the table . Someone then takes the cup without changing its orientation and puts it inside the microwave. Where is the marble in the end?'
   
   # - 'I have 3 oranges, then I buy 3 more. I make juice with 2 of the oranges. After drinking half of the juice, how many oranges do I have left?'
-  - 'Tom is a boy. He has four sisters. Each of his sisters has three brothers. How many brothers does Tom have in total?'
+  # - 'Tom is a boy. He has four sisters. Each of his sisters has three brothers. How many brothers does Tom have in total?'
   
-  - 'Anna and Bob are in a room with a toy car, a shelf, and a drawer. Anna puts the toy car on the shelf, then leaves for the day. While Anna is gone, Bob puts the toy car in the drawer, and then leaves for lunch. They both return together later, not knowing what happened while they were away. Where do they think the toy car is?'
+  # - 'Anna and Bob are in a room with a toy car, a shelf, and a drawer. Anna puts the toy car on the shelf, then leaves for the day. While Anna is gone, Bob puts the toy car in the drawer, and then leaves for lunch. They both return together later, not knowing what happened while they were away. Where do they think the toy car is?'
   
   # - 'If we place 6 towels out in the sun and it takes 3 hours to dry, how long would 24 towels take to dry? Explain your reasoning step by step.'
   # - 'Count the words  that are there in your response to the question I am asking?'
@@ -34,22 +37,22 @@ prompts:
 
 providers:
 
-  # - id: ollama:closex/neuraldaredevil-8b-abliterated:latest   ### BEST PERFORMANCE
-  #   config:
-  #     temperature: 0
+  - id: ollama:closex/neuraldaredevil-8b-abliterated:latest   ### BEST PERFORMANCE
+    config:
+      temperature: 0
 
-  # - id: ollama:mannix/llama3.1-8b-abliterated:latest     ### 2nd BEST PERFORMANCE
-  #   config:
-  #     temperature: 0
+  - id: ollama:mannix/llama3.1-8b-abliterated:latest     ### 2nd BEST PERFORMANCE
+    config:
+      temperature: 0
 
-  # - id: ollama:jaahas/gemma-2-9b-it-abliterated:latest   ### 3rd BEST PERFORMANCE
-  #   config:
-  #     temperature: 0 
+  - id: ollama:jaahas/gemma-2-9b-it-abliterated:latest   ### 3rd BEST PERFORMANCE
+    config:
+      temperature: 0 
 
-  # - id: ollama:codegeex4:latest                 ### BEST CODING PERFORMANCE
+  - id: ollama:codegeex4:latest                 ### BEST CODING PERFORMANCE
   # - id: ollama:codegeex4:9b-all-q5_K_M                 ### BEST CODING PERFORMANCE
-  #   config:
-  #     temperature: 0.3
+    config:
+      temperature: 0
 
   # - id: openai:chat:Llama-3.1-SuperNova-Lite-Q6_K_L.gguf ### DECENT CODE PERFORMANCE (HTML CONFETTI)
   #   config:
@@ -58,9 +61,9 @@ providers:
   #     temperature: 0
 
   
-  # - id: ollama:completion:taozhiyuai/hermes-2-theta-llama-3:8b-q4_k_m
-  #   config:
-  #     temperature: 0
+  - id: ollama:completion:taozhiyuai/hermes-2-theta-llama-3:8b-q4_k_m
+    config:
+      temperature: 0
   
   # - id: ollama:llama3.1
   #   config:
@@ -70,9 +73,9 @@ providers:
   #   config:
   #     temperature: 0
 
-  - id: ollama:qwen2.5:3b
-    config:
-      temperature: 0 
+  # - id: ollama:qwen2.5:3b
+  #   config:
+  #     temperature: 0 
 
 
       
