@@ -2,57 +2,87 @@
 description: "LLM-TEST-HARNESS"
 
 prompts:
+  # REASONING
+  # - 'how many r are there in the word STRAWBERRY? Lets think step by step.'
+  # - 'how many r are there in the word STRAWBERRY? Let's verify step by step.'
+  # - 'how many r are there in the word STRAWBERRY? Lets break it down and verify each step.'
+  # - 'Lets analyze the word STRAWBERRY systematically to determine how many occurrences of the letter R are present.
+  #     Initial Breakdown- Start by listing all the letters in the word STRAWBERRY.
+  #     Identification of the Target Letter- Specify the target letter, which is R.
+  #     Counting Occurrences- Count each instance of R as you go through the list of letters.
+  #     Final Tally- Provide a final count and ensure clarity by reiterating the steps taken to reach the conclusion.
+  #     Please present the answer in a structured format that includes each step of the reasoning process.'
+
+  # CHAIN OF THOUGHT PROMPT
+  # - 'As an expert problem solver, analyze the following question thoroughly before beginning your response. Plan your approach by identifying key concepts and potential methods. Then, proceed to solve the problem step by step, explaining each part of your reasoning in clear and natural language. Consider alternative methods or perspectives if applicable, and evaluate the merits of each. After each step, verify its accuracy and correct any mistakes you find. Upon completion, critically reflect on your reasoning process, noting any insights or challenges encountered. Finally, provide a clear and concise final answer to the question. Question: Three different doctors said that Paul is their brother yet Paul says he has no brothers. Who is lying'
+
+  # ITERATION OF THOUGHT PROMPT
+  # - 'You are a reasoning expert that uses the Iteration of Thought (IoT) framework to solve complex tasks through structured, step-by-step reasoning.
+  #   Your goal is to provide a clear and concise explanation of the problem, followed by a step-by-step breakdown of the reasoning process.
+  #   Behavior-
+  #   Autonomous Iteration of Thought (AIoT)- Start by reading the question alound. For each query, you will dynamically generate step-by-step responses and continue iterating until a satisfactory solution is reached.You will decide when to stop iterating based on the quality and correctness of your output.
+  #   If the answer appears incomplete, you will continue iterating to improve and refine your reasoning. Reanalyze the problem from multiple angles, explore different approaches, and cross-check answers. Use each iteration to refine, verify, or elaborate on previous steps, ensuring all potential solutions are explored.
+
+  #   Inner Dialogue Agent (IDA)-At each iteration, guide yourself by asking reflective questions about your previous response.
+  #   Revisit the tasks context to ensure that no part of the problem has been misunderstood or overlooked.
+  #   Generate specific, clear follow-up questions that help clarify ambiguous points in the reasoning process.
+
+  #   LLM Reasoning Agent (LLMA)-You are responsible for responding to the prompts from the IDA. For each step, provide a well-reasoned answer, checking for potential errors or gaps in reasoning.
+  #   If the IDA identifies any issues or further exploration is needed, continue refining the response until the problem is fully solved.
+
+  #   Iterative Loop- Continue the inner dialogue between IDA and LLMA until an optimal solution is reached or until no further improvement can be made.
+  #   If a solution is reached early, you can autonomously decide to stop iterating and present the final answer.
+  #   Question- A small ball is put into a bowl and then the bowl is turned upside down. Then the bowl is turned back to the original position and placed on the table. Someone then takes the bowl and puts it inside the microwave. Where is the marble in the end?
+  #   Read the question again: A small ball is put into a bowl and then the bowl is turned upside down. Then the bowl is turned back to the original position and placed on the table. Someone then takes the bowl and puts it inside the microwave. Where is the marble in the end?'
+  # Question- how many r are there in the word STRAWBERRY?
+  # Question- Three different doctors said that Paul is their brother yet Paul says he has no brothers. Who is lying?
 
   # CONTEXT UNDERSTANDING AND INSTRUCTION FOLLOWING
-  # - 'how many r are there in the word STRAWBERRY? Let''s think step by step.'
-  # - 'how many r are there in the word STRAWBERRY? Let''s verify step by step.'
-  - 'how many r are there in the word STRAWBERRY? Lets break it down and verify each step.'
-  # - 'Provide 10 sentences that start with the word "apple" and end in the word "beauty".'
+  - 'Provide 10 sentences that start with the word "apple" and end in the word "beauty".'
   # - 'Three different doctors said that Paul is their brother yet Paul says he has no brothers. Who is lying and who is correct?'
-  # - 'Which number is greater, 9.11 or 9.9? Just say the number.'
+  - "Which number is greater, 9.11 or 9.9? Just say the number."
   # - 'Which number rhymes with the word used to describe a type of punishment. Count the letters step by step that are in that number'
 
-  # - 'A small marble is put into a cup and the cup is turned upside down. Then it is placed on the table. Someone then takes the cup without changing its orientation and puts it inside the microwave. Where is the marble in the end?'
-  # - 'A small ball is put into a cup and the cup is turned upside down. Then the cup is turned back to the original position and placed on the table . Someone then takes the cup without changing its orientation and puts it inside the microwave. Where is the marble in the end?'
-  
+  # PHYSICAL REASONING
+  # - 'A small marble is put into a bowl and then bowl is turned upside down. Then the placed on the table. Someone then takes the bowl without changing its orientation and puts it inside the microwave. Where is the marble in the end?'
+  # - 'A small ball is put into a bowl and then the bowl is turned upside down. Then the bowl is turned back to the original position and placed  on the table. Someone then takes the bowl and puts it inside the microwave. Where is the marble in the end?
+  #   Read the question again- A small ball is put into a bowl and then the bowl is turned upside down. Then the bowl is turned back to the original position and placed on the table. Someone then takes the bowl and puts it inside the microwave. Where is the marble in the end? Start by reading the question alound.'
+
   # - 'I have 3 oranges, then I buy 3 more. I make juice with 2 of the oranges. After drinking half of the juice, how many oranges do I have left?'
   # - 'Tom is a boy. He has four sisters. Each of his sisters has three brothers. How many brothers does Tom have in total?'
-  
+
   # - 'Anna and Bob are in a room with a toy car, a shelf, and a drawer. Anna puts the toy car on the shelf, then leaves for the day. While Anna is gone, Bob puts the toy car in the drawer, and then leaves for lunch. They both return together later, not knowing what happened while they were away. Where do they think the toy car is?'
-  
+
   # - 'If we place 6 towels out in the sun and it takes 3 hours to dry, how long would 24 towels take to dry? Explain your reasoning step by step.'
   # - 'Count the words  that are there in your response to the question I am asking?'
-  
+
   # - 'Amy is quicker than Ben. Ben is quicker than Carl. Is Carl quicker than Amy?'
   # - '30 – 5 * 3 + 4 =?'
   # - 'If a regular octagon has a side length of 32, what is its perimeter?'
-  
 
   # CODING CHALLENGES
   # - 'Using HTML, CSS, and JavaScript in the same file, create a button that explodes confetti when clicked.'
   # - 'Using HTML, CSS, and JavaScript in the same file, design a landing page for a tech startup. The page should have a clean and professional interface, ensuring smooth transitions between sections and interactions. The layout should be responsive, with key sections such as a hero header, features, team, and contact form. Focus on minimalism, using whitespace and typography effectively, while implementing transitions such as fade-in effects for elements as the user scrolls. Include embedded JavaScript to manage the interactive features like form validation or smooth scrolling.'
   # - Generate svg code for a butterfly
-  
-  
 
 providers:
 
-  - id: ollama:closex/neuraldaredevil-8b-abliterated:latest   ### BEST PERFORMANCE
-    config:
-      temperature: 0
+  # - id: ollama:closex/neuraldaredevil-8b-abliterated:latest   ### BEST PERFORMANCE
+  #   config:
+  #     temperature: 0
 
-  - id: ollama:mannix/llama3.1-8b-abliterated:latest     ### 2nd BEST PERFORMANCE
-    config:
-      temperature: 0
+  # - id: ollama:mannix/llama3.1-8b-abliterated:latest     ### 2nd BEST PERFORMANCE
+  #   config:
+  #     temperature: 0
 
-  - id: ollama:jaahas/gemma-2-9b-it-abliterated:latest   ### 3rd BEST PERFORMANCE
-    config:
-      temperature: 0 
+  # - id: ollama:jaahas/gemma-2-9b-it-abliterated:latest   ### 3rd BEST PERFORMANCE
+  #   config:
+  #     temperature: 0
 
-  - id: ollama:codegeex4:latest                 ### BEST CODING PERFORMANCE
-  # - id: ollama:codegeex4:9b-all-q5_K_M                 ### BEST CODING PERFORMANCE
-    config:
-      temperature: 0
+  # - id: ollama:codegeex4:latest                 ### BEST CODING PERFORMANCE
+  # # - id: ollama:codegeex4:9b-all-q5_K_M                 ### BEST CODING PERFORMANCE
+  #   config:
+  #     temperature: 0
 
   # - id: openai:chat:Llama-3.1-SuperNova-Lite-Q6_K_L.gguf ### DECENT CODE PERFORMANCE (HTML CONFETTI)
   #   config:
@@ -60,58 +90,28 @@ providers:
   #     apiKey: lmstudio
   #     temperature: 0
 
-  
-  - id: ollama:completion:taozhiyuai/hermes-2-theta-llama-3:8b-q4_k_m
-    config:
-      temperature: 0
-  
-  # - id: ollama:llama3.1
-  #   config:
-  #     temperature: 0  
-  
-  # - id: ollama:qwen2.5-coder:7b-instruct-q6_K
+  # - id: ollama:phi3:3.8b
   #   config:
   #     temperature: 0
 
-  # - id: ollama:qwen2.5:3b
+  # - id: ollama:phi3.5:3.8b-mini-instruct-q4_K_M
   #   config:
-  #     temperature: 0 
-
-
-      
-
-  
-  
-      
-  
-######################LM STUDIO######################## 
-  
-
-  # - id: openai:chat:solar-pro-preview-instruct.IQ2_XS.gguf
-  #   config:
-  #     apiBaseUrl: http://localhost:1234/v1
-  #     apiKey: lmstudio
   #     temperature: 0
 
+  # - id: ollama:llama3.2:3b-text-q8_0
+  #   config:
+  #     temperature: 0
 
-  
+  # - id: ollama:llama3.2:3b-text-q8_0
+  #   config:
+  #     temperature: 0
+######################LM STUDIO########################
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# - id: openai:chat:gemma-2-ataraxy-gemmasutra-9b-slerp-q6_k.gguf
+#   config:
+#     apiBaseUrl: http://localhost:1234/v1
+#     apiKey: lmstudio
+#     temperature: 0
 
 # tests:
 #   - vars:
