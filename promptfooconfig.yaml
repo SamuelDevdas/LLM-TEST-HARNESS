@@ -2,6 +2,13 @@
 description: "LLM-TEST-HARNESS"
 
 prompts:
+  # CONTEXT UNDERSTANDING AND INSTRUCTION FOLLOWING
+  # - 'Provide 10 sentences that start with the word "apple" and end in the word "beauty".'
+  # - 'Three different doctors said that Paul is their brother yet Paul says he has no brothers. Who is lying and who is correct?'
+  # - "Which number is greater, 9.11 or 9.9? Just say the number."
+  # - 'Which number rhymes with the word used to describe a type of punishment?'
+  # - 'Which number rhymes with the word used to describe a type of punishment. Count the letters step by step that are in that number'
+
   # REASONING
   # - 'how many r are there in the word STRAWBERRY? Lets think step by step.'
   # - 'how many r are there in the word STRAWBERRY? Let's verify step by step.'
@@ -37,12 +44,6 @@ prompts:
   # Question- how many r are there in the word STRAWBERRY?
   # Question- Three different doctors said that Paul is their brother yet Paul says he has no brothers. Who is lying?
 
-  # CONTEXT UNDERSTANDING AND INSTRUCTION FOLLOWING
-  - 'Provide 10 sentences that start with the word "apple" and end in the word "beauty".'
-  # - 'Three different doctors said that Paul is their brother yet Paul says he has no brothers. Who is lying and who is correct?'
-  - "Which number is greater, 9.11 or 9.9? Just say the number."
-  # - 'Which number rhymes with the word used to describe a type of punishment. Count the letters step by step that are in that number'
-
   # PHYSICAL REASONING
   # - 'A small marble is put into a bowl and then bowl is turned upside down. Then the placed on the table. Someone then takes the bowl without changing its orientation and puts it inside the microwave. Where is the marble in the end?'
   # - 'A small ball is put into a bowl and then the bowl is turned upside down. Then the bowl is turned back to the original position and placed  on the table. Someone then takes the bowl and puts it inside the microwave. Where is the marble in the end?
@@ -65,8 +66,53 @@ prompts:
   # - 'Using HTML, CSS, and JavaScript in the same file, design a landing page for a tech startup. The page should have a clean and professional interface, ensuring smooth transitions between sections and interactions. The layout should be responsive, with key sections such as a hero header, features, team, and contact form. Focus on minimalism, using whitespace and typography effectively, while implementing transitions such as fade-in effects for elements as the user scrolls. Include embedded JavaScript to manage the interactive features like form validation or smooth scrolling.'
   # - Generate svg code for a butterfly
 
-providers:
+  # MULTI REASONING PROMPT
+  - 'As an AI language model emulating human reasoning, approach each problem by engaging in a dynamic and flexible thought process that mirrors human thinking.     Your goal is to provide a comprehensive, well-reasoned, and helpful response that addresses the users needs.
+    When responding to the users QUERY, follow these steps, using explicit tags and markers to trace your thought process-
+    1- [Problem Understanding and Framing]
+    [Problem Understanding]: Clearly restate the users problem or request.
+    [Context Identification]: Identify the context, significance, and underlying assumptions.
+    [Initial Reflection]: BrieYfly reflect on the key issues involved.
+    2- [Reasoning Strategy Selection]
+    [Select Reasoning Strategies]: FIRST SELECT THE MOST APPROPRIATE reasoning strategy from the list below, CREATE A ITERATION SEQUENCE PLAN FOR THE MOST APPROPRIATE SEQUENCE AND ITERATE ACCORDING TO POINT 3, UNTIL THE LIST IS EXHAUSTED-
+    [Deductive Reasoning]
+    [Inductive Reasoning]
+    [Abductive Reasoning]
+    [Analogical Reasoning]
+    [Causal Reasoning]
+    [Probabilistic Reasoning]
+    [Heuristic Reasoning]
+    [Counterfactual Reasoning]
+    [Pragmatic Reasoning]
+    [Moral Reasoning]
+    [Intuitive Reasoning]
+    [Metacognitive Reasoning]
+    [Creative Reasoning]
+    [Justify Selection]: Explain why the CURRENT reasoning strategy is appropriate for the problem.
+    Use explicit tags to indicate each reasoning strategy employed.
+    3- [Engage in Reasoning with Self-Reflection iteratively]
+    For each reasoning strategy-
+    Provide a step-by-step account using the appropriate tags.
+    Use first-person language to reflect on your thought process.
+    Identify and mitigate any cognitive biases in your reasoning.
+    Make explicit transition, WITH REASON, TO the next most appropriate strategy iteratively in the list UNTIL THE LIST IS EXHAUSTED, using markers like "[Switching to Inductive Reasoning]".
+    4- [Develop Solution]
+    [Solution Development]: Synthesize insights from your reasoning to develop a coherent, practical and actionable solution.
+    Ensure the solution addresses all aspects of the users problem.
+    5- [Reflect and Conclude]
+    [Summary]: Summarize the key points from your reasoning.
+    [Final Conclusion]: Clearly state your final recommendation, highlighting how it meets the users needs.
+    Remember-
+    Maintain coherence and clarity throughout your response.
+    Use tags and markers to trace and debug your thought process.
+    Emphasize self-reflection and transparency.
+    The goal is to emulate human reasoning effectively to assist the user.
+    Keep explanations clear and concise to facilitate understanding.
+    QUERY-how many L are there in the word VOLLEYBALL?'
+  #   QUERY-Which number rhymes with the word used to describe a type of punishment?'
+  
 
+providers:
   # - id: ollama:closex/neuraldaredevil-8b-abliterated:latest   ### BEST PERFORMANCE
   #   config:
   #     temperature: 0
@@ -75,7 +121,7 @@ providers:
   #   config:
   #     temperature: 0
 
-  # - id: ollama:jaahas/gemma-2-9b-it-abliterated:latest   ### 3rd BEST PERFORMANCE
+  # - id: ollama:jaahas/gemma-2-9b-it-abliterated:latest ### 3rd BEST PERFORMANCE
   #   config:
   #     temperature: 0
 
@@ -94,15 +140,19 @@ providers:
   #   config:
   #     temperature: 0
 
-  # - id: ollama:phi3.5:3.8b-mini-instruct-q4_K_M
+  - id: ollama:qwen2.5:3b
+    config:
+      temperature: 0 
+  
+  - id: ollama:qwen2.5:latest
+    config:
+      temperature: 0
+
+  # - id: ollama:llama3.2
   #   config:
   #     temperature: 0
 
-  # - id: ollama:llama3.2:3b-text-q8_0
-  #   config:
-  #     temperature: 0
-
-  # - id: ollama:llama3.2:3b-text-q8_0
+  # - id: ollama:llama3.2:1b
   #   config:
   #     temperature: 0
 ######################LM STUDIO########################
@@ -112,28 +162,4 @@ providers:
 #     apiBaseUrl: http://localhost:1234/v1
 #     apiKey: lmstudio
 #     temperature: 0
-
-# tests:
-#   - vars:
-#       topic: bananas
-
-#   - vars:
-#       topic: avocado toast
-#     assert:
-#       # For more information on assertions, see https://promptfoo.dev/docs/configuration/expected-outputs
-
-#       # Make sure output contains the word "avocado"
-#       - type: icontains
-#         value: avocado
-
-#       # Prefer shorter outputs
-#       - type: javascript
-#         value: 1 / (output.length + 1)
-
-#   - vars:
-#       topic: new york city
-#     assert:
-#       # For more information on model-graded evals, see https://promptfoo.dev/docs/configuration/expected-outputs/model-graded
-#       - type: llm-rubric
-#         value: ensure that the output is funny
 
