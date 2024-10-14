@@ -108,7 +108,8 @@ prompts:
     Emphasize self-reflection and transparency.
     The goal is to emulate human reasoning effectively to assist the user.
     Keep explanations clear and concise to facilitate understanding.
-    QUERY-how many L are there in the word VOLLEYBALL?'
+    QUERY- Three different doctors said that Paul is their brother yet Paul says he has no brothers. Who is lying and who is correct?'
+  #   QUERY-Which number rhymes with the word used to describe a type of punishment??'
   #   QUERY-Which number rhymes with the word used to describe a type of punishment?'
   
 
@@ -139,14 +140,18 @@ providers:
   # - id: ollama:phi3:3.8b
   #   config:
   #     temperature: 0
-
-  - id: ollama:qwen2.5:3b
-    config:
-      temperature: 0 
   
-  - id: ollama:qwen2.5:latest
-    config:
-      temperature: 0
+  # - id: ollama:superdrew100/kappa-3-phi-3-4k-instruct-abliterated
+  #   config:
+  #     temperature: 0
+
+  # - id: ollama:qwen2.5:3b
+  #   config:
+  #     temperature: 0 
+  
+  # - id: ollama:qwen2.5:latest
+  #   config:
+  #     temperature: 0
 
   # - id: ollama:llama3.2
   #   config:
@@ -157,9 +162,9 @@ providers:
   #     temperature: 0
 ######################LM STUDIO########################
 
-# - id: openai:chat:gemma-2-ataraxy-gemmasutra-9b-slerp-q6_k.gguf
-#   config:
-#     apiBaseUrl: http://localhost:1234/v1
-#     apiKey: lmstudio
-#     temperature: 0
+- id: openai:chat:ldm_soup_Llama-3.1-8B-Inst.Q4_K_M.gguf
+  config:
+    apiBaseUrl: http://localhost:1234/v1
+    apiKey: lmstudio
+    temperature: 0
 
